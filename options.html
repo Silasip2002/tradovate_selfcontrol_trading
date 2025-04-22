@@ -16,6 +16,8 @@
         .day-selector label { margin-right: 10px; font-weight: normal; }
         .time-inputs label { font-weight: normal; }
         .setting-block { margin-bottom: 15px; }
+        .support-section { margin-top: 25px; text-align: center; }
+        .support-section button:hover { background-color: #005ea6; }
     </style>
 </head>
 <body>
@@ -64,6 +66,21 @@
     <button id="save">Save Settings</button>
     <div id="status"></div>
     <div id="optionsStatus" style="margin-top: 10px; font-style: italic; color: #666;"></div>
+
+    <hr style="margin-top: 30px; margin-bottom: 20px; border: 0; border-top: 1px solid #ddd;">
+
+    <div class="support-section">
+        <p style="margin-bottom: 15px;">If you find this extension helpful, consider buying me a coffee!</p>
+        <form action="https://www.paypal.com/donate" method="post" target="_blank">
+            <input type="hidden" name="business" value="faithsilas@gmail.com">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="item_name" value="Support Tradovate Limiter Development">
+            <button type="submit" style="background-color: #0070ba; color: white; border: none; border-radius: 4px; padding: 10px 20px; font-size: 14px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center;">
+                <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" alt="PayPal" style="height: 18px; margin-right: 8px;">
+                Buy Me a Coffee
+            </button>
+        </form>
+    </div>
 
     <script src="options.js"></script>
 </body>
