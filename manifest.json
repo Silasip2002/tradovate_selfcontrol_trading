@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Tradovate Daily Trade Limiter",
+  "version": "1.5",
+  "description": "Limits clicks on specific Tradovate trading buttons to a configurable number per day.",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.tradovate.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "options.html",
+  "action": {
+      "default_title": "Trade Limiter Options",
+      "default_icon": {
+          "16": "icon16.png",
+          "32": "icon32.png",
+          "48": "icon48.png",
+          "128": "icon128.png"
+      }
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}

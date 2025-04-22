@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tradovate Limiter Options</title>
+    <style>
+        body { font-family: sans-serif; padding: 15px; width: 400px; /* Wider */ }
+        label { display: inline-block; margin-bottom: 5px; font-weight: bold; }
+        input[type="number"] { width: 60px; padding: 5px; margin-left: 10px; }
+        input[type="time"] { padding: 5px; margin: 0 5px; }
+        input[type="checkbox"] { margin-right: 3px; vertical-align: middle; }
+        button { padding: 10px 15px; cursor: pointer; margin-top: 15px; }
+        #status { margin-top: 15px; font-weight: bold; min-height: 20px; }
+        #currentStatus { margin-top: 10px; font-style: italic; color: #333; }
+        fieldset { border: 1px solid #ccc; padding: 10px; margin-top: 20px; margin-bottom: 15px; }
+        legend { font-weight: bold; padding: 0 5px; }
+        .day-selector label { margin-right: 10px; font-weight: normal; }
+        .time-inputs label { font-weight: normal; }
+        .setting-block { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <h2>Tradovate Daily Trade Limiter</h2>
+
+    <div class="setting-block">
+        <label for="maxClicks">Maximum Trades Per Day:</label>
+        <input type="number" id="maxClicks" name="maxClicks" min="0" step="1">
+    </div>
+
+    <div class="setting-block">
+        <input type="checkbox" id="enableAutoClose" name="enableAutoClose">
+        <label for="enableAutoClose">Auto-close tab when limit is reached</label>
+        <small style="display: block; margin-left: 20px; color: #555;">When enabled, the tab will automatically close when you reach your daily limit or outside trading hours.</small>
+    </div>
+
+    <div id="currentStatus">Loading current status...</div>
+
+    <fieldset>
+        <legend>Time Restriction (Uses Local Time)</legend>
+        <div class="setting-block">
+            <input type="checkbox" id="enableTimeRestriction" name="enableTimeRestriction">
+            <label for="enableTimeRestriction">Enable Trading Time Limit</label>
+        </div>
+
+        <div class="setting-block day-selector">
+            <label>Allowed Days:</label><br>
+            <input type="checkbox" id="dayMon" value="1"><label for="dayMon">Mon</label>
+            <input type="checkbox" id="dayTue" value="2"><label for="dayTue">Tue</label>
+            <input type="checkbox" id="dayWed" value="3"><label for="dayWed">Wed</label>
+            <input type="checkbox" id="dayThu" value="4"><label for="dayThu">Thu</label>
+            <input type="checkbox" id="dayFri" value="5"><label for="dayFri">Fri</label>
+            <input type="checkbox" id="daySat" value="6"><label for="daySat">Sat</label>
+            <input type="checkbox" id="daySun" value="0"><label for="daySun">Sun</label>
+        </div>
+
+        <div class="setting-block time-inputs">
+            <label for="startTime">From:</label>
+            <input type="time" id="startTime" name="startTime">
+            <label for="endTime">To:</label>
+            <input type="time" id="endTime" name="endTime">
+        </div>
+         <small style="color: #555;">Buttons will be disabled outside these days/times if enabled.</small>
+    </fieldset>
+
+    <button id="save">Save Settings</button>
+    <div id="status"></div>
+    <div id="optionsStatus" style="margin-top: 10px; font-style: italic; color: #666;"></div>
+
+    <script src="options.js"></script>
+</body>
+</html>
